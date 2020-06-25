@@ -10,7 +10,6 @@ class QDCache {
     constructor() {
         if (!QDCache.instance) {
             this._data = new Map;
-            this.size = 0;
             QDCache.instance = this;
         }
         return QDCache.instance;
@@ -51,7 +50,6 @@ class QDCache {
             bytes: bytes,
         };
         this._data.set(key, dataStore);
-        this.size += dataStore.bytes;
         return value;
     }
     /**
@@ -59,12 +57,14 @@ class QDCache {
      * @param {String} key the key of the data you wish to delete
      */
     delete(key) {
-        const test = this._data.get(key);
-        if (!test) {
+        const dataStore = this._data.get(key);
+        if (!dataStore) {
             return null;
         }
-        this.size -= test.bytes;
         this._data.delete(key);
+    }
+    clear() {
+        this._data.clear();
     }
 }
 
@@ -72,3 +72,5 @@ const instance = new QDCache();
 Object.freeze(instance);
 
 module.exports = instance;
+
+instance.clear();

@@ -4,5 +4,13 @@
   "description": "A quick and dirty singleton memory caching system",
   "main": "index.js",
   "author": "Ramona Prower",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watch",
+    "testinit": "jest --init"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "jest": "^26.1.0"
+  }
 }
