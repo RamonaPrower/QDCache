@@ -1,8 +1,8 @@
 {
   "name": "qdcache",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A quick and dirty singleton memory caching system",
-  "main": "index.js",
+  "main": "index",
   "author": "Ramona Prower",
   "license": "MIT",
   "scripts": {
