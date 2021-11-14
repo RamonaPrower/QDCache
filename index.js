@@ -72,5 +72,3 @@ const instance = new QDCache();
 Object.freeze(instance);
 
 module.exports = instance;
-
-instance.clear();
